@@ -27,6 +27,20 @@ This project is a React application that allows users to search for movies and v
 - Display detailed information about a selected movie in a modal dialog.
 - Responsive design and basic animations for enhanced user experience.
 
+src/
+├── api.js
+├── App.css
+├── App.js
+├── components/
+│   ├── MovieCard.js
+│   ├── MovieContextProvider.js
+│   ├── MovieDetail.js
+│   ├── MovieList.js
+│   └── SearchForm.js
+├── index.css
+└── index.js
+
+
 ## Getting Started
 
 ### Prerequisites
