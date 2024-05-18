@@ -18,57 +18,25 @@ This project is a React-based application that allows users to search for movies
 - React Modal
 - CSS
 
-## Project Structure
+## Installation
 
-- `src/`
-  - `components/`
-    - `App.js` - Main component setting up the context provider and fetching initial data.
-    - `MovieContextProvider.js` - Context provider component managing movie data state.
-    - `MovieList.js` - Component consuming the context and displaying a list of movies.
-    - `MovieCard.js` - Component displaying individual movie data with a button to view details.
-    - `SearchForm.js` - Component with a form to search for movies by title.
-    - `MovieDetail.js` - Component displaying detailed information for a selected movie.
-  - `styles/` - CSS files for styling the components.
+1. Clone the repository:
 
-## Components
+    ```bash
+    git clone https://github.com/yourusername/movie-explorer.git
+    cd movie-explorer
+    ```
 
-### App Component
+2. Install the dependencies:
 
-- Sets up the context provider.
-- Fetches initial movie data from the OMDb API and provides it to the context.
+    ```bash
+    npm install
+    ```
 
-### MovieContextProvider Component
+3. Start the development server:
 
-- Creates a context for managing movie data.
-- Implements functions to update the context state.
+    ```bash
+    npm start
+    ```
 
-### MovieList Component
-
-- Consumes the context to display a list of movies.
-- Passes necessary props to `MovieCard` and `SearchForm`.
-
-### MovieCard Component
-
-- Displays individual movie data.
-- Includes a button to view detailed movie information, opening the `MovieDetail` component.
-
-### SearchForm Component
-
-- Includes a form to search for movies by title.
-- Handles form submission and makes API calls to fetch new movie data.
-
-### MovieDetail Component
-
-- Displays detailed movie information for the selected movie data.
-
-## Styling
-
-- Use CSS to style the components.
-- Ensure the app is responsive.
-- Add basic animations for displaying detailed movie information.
-
-## Testing and Debugging
-
-- Test the application thoroughly.
-- Ensure API interactions and data updates work as expected.
-- Handle potential errors gracefully.
+    The application will run on `http://localhost:3000`.
