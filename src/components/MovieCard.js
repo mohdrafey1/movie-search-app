@@ -7,7 +7,7 @@ const MovieCard = ({ movie }) => {
     const handleOpenModal = () => setShowModal(true);
     const handleCloseModal = () => setShowModal(false);
 
-    const movieName = movie.Title.substring(0, 50);
+    const movieName = movie.Title.substring(0, 25);
 
     return (
         <div className="movie-card">
@@ -16,7 +16,7 @@ const MovieCard = ({ movie }) => {
                     <img src={movie.Poster} alt={movie.Title} />
                 </div>
                 <h3 id="movie-title">
-                    {movieName.length >= 15 ? `${movieName}...` : movieName}
+                    {movieName.length >= 25 ? `${movieName}...` : movieName}
                 </h3>
             </div>
             <div className="card-btn">

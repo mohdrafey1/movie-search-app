@@ -7,11 +7,11 @@ import './App.css';
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
 
-const API_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const App = () => {
     const [movies, setMovies] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('Harry Potter');
+    const [searchQuery, setSearchQuery] = useState('Avengers');
     const [isError, setIsError] = useState({ show: false, msg: '' });
 
     useEffect(() => {
