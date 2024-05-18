@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Movie Search App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a React-based application that allows users to search for movies using the OMDb API. It includes components for displaying a list of movies, detailed movie information, and a search form for fetching movies by title. The project incorporates context for state management, modal popups for detailed views, and responsive styling.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Movie Search:** Users can search for movies by title.
+- **Movie List:** Display a list of movies based on the search query.
+- **Movie Details:** View detailed information about a selected movie.
+- **Responsive Design:** The application is responsive and includes basic animations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- Axios
+- React Modal
+- CSS
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `src/`
+  - `components/`
+    - `App.js` - Main component setting up the context provider and fetching initial data.
+    - `MovieContextProvider.js` - Context provider component managing movie data state.
+    - `MovieList.js` - Component consuming the context and displaying a list of movies.
+    - `MovieCard.js` - Component displaying individual movie data with a button to view details.
+    - `SearchForm.js` - Component with a form to search for movies by title.
+    - `MovieDetail.js` - Component displaying detailed information for a selected movie.
+  - `styles/` - CSS files for styling the components.
 
-### `npm run build`
+## Components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### App Component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Sets up the context provider.
+- Fetches initial movie data from the OMDb API and provides it to the context.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### MovieContextProvider Component
 
-### `npm run eject`
+- Creates a context for managing movie data.
+- Implements functions to update the context state.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### MovieList Component
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Consumes the context to display a list of movies.
+- Passes necessary props to `MovieCard` and `SearchForm`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### MovieCard Component
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Displays individual movie data.
+- Includes a button to view detailed movie information, opening the `MovieDetail` component.
 
-## Learn More
+### SearchForm Component
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Includes a form to search for movies by title.
+- Handles form submission and makes API calls to fetch new movie data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### MovieDetail Component
 
-### Code Splitting
+- Displays detailed movie information for the selected movie data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Styling
 
-### Analyzing the Bundle Size
+- Use CSS to style the components.
+- Ensure the app is responsive.
+- Add basic animations for displaying detailed movie information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Testing and Debugging
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Test the application thoroughly.
+- Ensure API interactions and data updates work as expected.
+- Handle potential errors gracefully.
