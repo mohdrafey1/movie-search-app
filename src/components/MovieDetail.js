@@ -29,7 +29,15 @@ const MovieDetail = ({ movieId, onClose }) => {
     if (!movie) return null;
 
     return (
-        <ReactModal isOpen onRequestClose={onClose} ariaHideApp={false}>
+        <ReactModal
+            isOpen
+            onRequestClose={onClose}
+            ariaHideApp={false}
+            className="modal"
+            overlayClassName="overlay"
+            contentLabel="Movie Detail Modal"
+            center
+        >
             {isError.show ? (
                 <p className="error">{isError.msg}</p>
             ) : (
