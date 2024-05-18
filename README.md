@@ -28,8 +28,6 @@ This project is a React-based application that allows users to search for movies
     - `MovieCard.js` - Component displaying individual movie data with a button to view details.
     - `SearchForm.js` - Component with a form to search for movies by title.
     - `MovieDetail.js` - Component displaying detailed information for a selected movie.
-  - `services/`
-    - `api.js` - Service function to fetch data from the OMDb API.
   - `styles/` - CSS files for styling the components.
 
 ## Components
