@@ -75,17 +75,8 @@ This project is a React-based application that allows users to search for movies
 
 A live demo of the application can be found [here](https://movie-search-app-ruddy-one.vercel.app/).
 
-## Contributing
 
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-
-
-## Installation
+## Installation and Get Started
 
 1. Clone the repository:
 
