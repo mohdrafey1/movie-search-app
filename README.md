@@ -18,57 +18,89 @@ This project is a React-based application that allows users to search for movies
 - React Modal
 - CSS
 
-## Project Structure
 
-- `src/`
-  - `components/`
-    - `App.js` - Main component setting up the context provider and fetching initial data.
-    - `MovieContextProvider.js` - Context provider component managing movie data state.
-    - `MovieList.js` - Component consuming the context and displaying a list of movies.
-    - `MovieCard.js` - Component displaying individual movie data with a button to view details.
-    - `SearchForm.js` - Component with a form to search for movies by title.
-    - `MovieDetail.js` - Component displaying detailed information for a selected movie.
-  - `styles/` - CSS files for styling the components.
 
 ## Components
 
 ### App Component
 
-- Sets up the context provider.
-- Fetches initial movie data from the OMDb API and provides it to the context.
+- **Purpose:** The main component that sets up the context provider and fetches initial movie data.
+- **Key Features:**
+  - Initializes the context provider to manage the global state.
+  - Fetches and provides initial movie data to the context.
 
 ### MovieContextProvider Component
 
-- Creates a context for managing movie data.
-- Implements functions to update the context state.
+- **Purpose:** Manages the state of the movie data and provides it to other components.
+- **Key Features:**
+  - Creates a context for managing movie data.
+  - Implements functions to update the context state, such as fetching new movie data based on user input.
 
 ### MovieList Component
 
-- Consumes the context to display a list of movies.
-- Passes necessary props to `MovieCard` and `SearchForm`.
+- **Purpose:** Displays a list of movies based on the search query.
+- **Key Features:**
+  - Consumes the context to access movie data.
+  - Passes movie data as props to `MovieCard` components.
 
 ### MovieCard Component
 
-- Displays individual movie data.
-- Includes a button to view detailed movie information, opening the `MovieDetail` component.
+- **Purpose:** Displays individual movie data in a card format.
+- **Key Features:**
+  - Shows basic information about a movie.
+  - Includes a button to view detailed information, which opens the `MovieDetail` component in a modal.
 
 ### SearchForm Component
 
-- Includes a form to search for movies by title.
-- Handles form submission and makes API calls to fetch new movie data.
+- **Purpose:** Provides a form for users to search for movies by title.
+- **Key Features:**
+  - Handles form submission and makes API calls to fetch movie data based on the input title.
+  - Updates the context with new movie data.
 
 ### MovieDetail Component
 
-- Displays detailed movie information for the selected movie data.
+- **Purpose:** Displays detailed information about a selected movie.
+- **Key Features:**
+  - Shows comprehensive details about a movie, such as the plot, cast, and release date.
+  - Presented in a modal popup for better user experience.
 
 ## Styling
 
-- Use CSS to style the components.
-- Ensure the app is responsive.
-- Add basic animations for displaying detailed movie information.
+- **CSS:** The application uses CSS for styling the components.
+- **Responsive Design:** Ensures the app works well on different screen sizes.
+- **Animations:** Added basic animations to enhance the display of detailed movie information.
 
-## Testing and Debugging
 
-- Test the application thoroughly.
-- Ensure API interactions and data updates work as expected.
-- Handle potential errors gracefully.
+## Live Demo
+
+A live demo of the application can be found [here](https://movie-search-app-ruddy-one.vercel.app/).
+
+
+## Installation and Get Started
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/mohdrafey1/movie-search-app.git
+    cd movie-search-app
+    ```
+
+2. Install the dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Create a .env file in the root of the project and add your OMDb API key:
+  
+    ```bash
+    REACT_APP_API_KEY=your_omdb_api_key
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm start
+    ```
+
+    The application will run on `http://localhost:3000`.
