@@ -33,7 +33,13 @@ This project is a React-based application that allows users to search for movies
     npm install
     ```
 
-3. Start the development server:
+ 3. Create a .env file in the root of the project and add your OMDb API key:
+ 4. 
+    ```bash
+    REACT_APP_OMDB_API_KEY=your_omdb_api_key
+    ```
+
+5. Start the development server:
 
     ```bash
     npm start
