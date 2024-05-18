@@ -76,7 +76,6 @@ This project is a React-based application that allows users to search for movies
 A live demo of the application can be found <a href="https://movie-search-app-ruddy-one.vercel.app/" target="_blank">Click Here</a>
 
 
-
 ## Installation and Get Started
 
 1. Clone the repository:
