@@ -68,12 +68,8 @@ This project is a React-based application that allows users to search for movies
 
 - **CSS:** The application uses CSS for styling the components.
 - **Responsive Design:** Ensures the app works well on different screen sizes.
-- **Animations:** Adds basic animations to enhance the display of detailed movie information.
+- **Animations:** Added basic animations to enhance the display of detailed movie information.
 
-## Testing and Debugging
-
-- **Testing:** Ensure thorough testing of the application to verify API interactions and data updates work as expected.
-- **Debugging:** Handle potential errors gracefully, ensuring a smooth user experience.
 
 ## Live Demo
 
