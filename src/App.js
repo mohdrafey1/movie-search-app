@@ -1,25 +1,55 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import MovieContextProvider from './components/MovieContextProvider';
+import MovieList from './components/MovieList';
+import SearchForm from './components/SearchForm';
+import axios from 'axios';
 import './App.css';
+import ReactModal from 'react-modal';
+ReactModal.setAppElement('#root');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+const API_URL = `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
+
+const App = () => {
+    const [movies, setMovies] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('Harry Potter');
+    const [isError, setIsError] = useState({ show: false, msg: '' });
+
+    useEffect(() => {
+        const getMovies = async (url) => {
+            try {
+                const response = await axios.get(`${API_URL}&s=${searchQuery}`);
+                const data = response.data;
+                console.log(data);
+                if (data.Response === 'True') {
+                    setIsError({
+                        show: false,
+                        msg: data.Error,
+                    });
+                    setMovies(data.Search);
+                } else {
+                    setIsError({
+                        show: true,
+                        msg: data.Error,
+                    });
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getMovies();
+    }, [searchQuery]);
+
+    return (
+        <MovieContextProvider
+            value={{ movies, isError, searchQuery, setSearchQuery }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+            <div className="App">
+                <SearchForm />
+                {isError.show && <p className="error">{isError.msg}</p>}
+                <MovieList />
+            </div>
+        </MovieContextProvider>
+    );
+};
 
 export default App;
