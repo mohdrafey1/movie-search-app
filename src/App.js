@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import MovieContextProvider from './components/MovieContextProvider';
+import { API_URL } from './components/MovieContextProvider';
 import MovieList from './components/MovieList';
 import SearchForm from './components/SearchForm';
 import axios from 'axios';
 import './App.css';
 import ReactModal from 'react-modal';
 ReactModal.setAppElement('#root');
-
-const API_URL = `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const App = () => {
     const [movies, setMovies] = useState([]);
