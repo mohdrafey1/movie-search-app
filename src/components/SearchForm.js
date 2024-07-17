@@ -7,10 +7,11 @@ const SearchForm = () => {
     const { setSearchQuery } = useContext(MovieContext);
     const [query, setQuery] = useState('');
     const [suggestions, setSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
     useEffect(() => {
         const fetchSuggestions = async () => {
-            if (query.length > 2) {
+            if (query.length > 2 && showSuggestions) {
                 try {
                     const response = await axios.get(`${API_URL}&s=${query}`);
                     const data = response.data;
@@ -33,7 +34,7 @@ const SearchForm = () => {
         }, 300);
 
         return () => clearTimeout(delayDebounceFn);
-    }, [query]);
+    }, [query, showSuggestions]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -65,7 +66,20 @@ const SearchForm = () => {
                         <button type="submit">Search</button>
                     </div>
                 </div>
-                {suggestions.length > 0 && (
+                <div className="toggle-suggestions">
+                    <input
+                        type="checkbox"
+                        id="flexSwitchCheckDefault"
+                        checked={showSuggestions}
+                        onChange={() => setShowSuggestions(!showSuggestions)}
+                    />
+                    <label htmlFor="flexSwitchCheckDefault">
+                        {showSuggestions
+                            ? 'Turn off suggestions'
+                            : 'Turn on suggestions'}
+                    </label>
+                </div>
+                {showSuggestions && suggestions.length > 0 && (
                     <ul className="suggestions-list">
                         {suggestions.map((suggestion) => (
                             <li

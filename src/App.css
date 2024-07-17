@@ -92,6 +92,7 @@ body {
 /* Search Form */
 #search-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -138,6 +139,54 @@ body {
 .searchbtn button:hover {
   background-color: #0056b3;
 }
+
+/* Custom switch styling */
+.toggle-suggestions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.toggle-suggestions input[type="checkbox"] {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.toggle-suggestions input[type="checkbox"]:checked {
+  background-color: blue;
+}
+
+.toggle-suggestions input[type="checkbox"]:before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: white;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
+
+.toggle-suggestions input[type="checkbox"]:checked:before {
+  transform: translateX(20px);
+}
+
+.toggle-suggestions label {
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
 
 .suggestions-list {
   position: absolute;
